@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void saveinfoclick(View view){
-        SharedPreferences sharedprefer=getSharedPreferences("logininfo", Context.MODE_PRIVATE);
+        SharedPreferences sharedprefer=getSharedPreferences("info", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=sharedprefer.edit();
-        editor.putString("username",editText.getText().toString());
-        editor.putString("password",editText2.getText().toString());
+        editor.putString("firstname",editText.getText().toString());
+        editor.putString("lastname",editText2.getText().toString());
 
         editor.apply();
         Toast.makeText(getApplicationContext(),"Saved",Toast.LENGTH_SHORT).show();
@@ -56,9 +56,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void displayinfoclick(View view){
-        SharedPreferences sharedprefer=getSharedPreferences("logininfo", Context.MODE_PRIVATE);
-        String name=sharedprefer.getString("username","");
-        String pass=sharedprefer.getString("password","");
+        SharedPreferences sharedprefer=getSharedPreferences("info", Context.MODE_PRIVATE);
+        String name=sharedprefer.getString("firstname","");
+        String pass=sharedprefer.getString("lastname","");
 
         mytext.setText(name+" "+pass);
     }
